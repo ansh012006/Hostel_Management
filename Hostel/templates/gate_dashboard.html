@@ -1,0 +1,11 @@
+<h2>Gate Dashboard</h2>
+<a href="/logout">Logout</a>
+
+{% for l in leaves %}
+<form method="POST">
+  <p>Student ID: {{ l.student_id }}</p>
+  <input type="hidden" name="leave_id" value="{{ l.id }}">
+  <button name="action" value="OUT">Mark OUT</button>
+  <button name="action" value="IN">Mark IN</button>
+</form>
+{% endfor %}

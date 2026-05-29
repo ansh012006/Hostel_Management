@@ -1,0 +1,11 @@
+<h2>HOD Dashboard</h2>
+<a href="/logout">Logout</a>
+
+{% for l in leaves %}
+<form method="POST">
+  <p>Student ID: {{ l.student_id }} | {{ l.from_date }} → {{ l.to_date }}</p>
+  <input type="hidden" name="leave_id" value="{{ l.id }}">
+  <button name="action" value="Approved">Approve</button>
+  <button name="action" value="Rejected">Reject</button>
+</form>
+{% endfor %}

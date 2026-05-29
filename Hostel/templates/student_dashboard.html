@@ -1,0 +1,14 @@
+<h2>Student Dashboard</h2>
+<a href="/logout">Logout</a>
+
+<form method="POST">
+  <input type="date" name="from" required>
+  <input type="date" name="to" required>
+  <input type="text" name="reason" placeholder="Reason" required>
+  <button>Apply Leave</button>
+</form>
+
+<h3>Your Leaves</h3>
+{% for l in leaves %}
+<p>{{ l.from_date }} → {{ l.to_date }} | HOD: {{ l.hod_status }} | Warden: {{ l.warden_status }}</p>
+{% endfor %}

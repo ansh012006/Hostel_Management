@@ -1,0 +1,17 @@
+<h2>Warden Dashboard</h2>
+<a href="/logout">Logout</a>
+
+<h3>Pending Leaves</h3>
+{% for l in leaves %}
+<form method="POST">
+  <p>Student ID: {{ l.student_id }}</p>
+  <input type="hidden" name="leave_id" value="{{ l.id }}">
+  <button name="action" value="Approved">Approve</button>
+  <button name="action" value="Rejected">Reject</button>
+</form>
+{% endfor %}
+
+<h3>Attendance (Students in Hostel)</h3>
+{% for s in present_students %}
+<p>{{ s.name }} | Room {{ s.room_no }}</p>
+{% endfor %}
